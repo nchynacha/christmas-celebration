@@ -1,0 +1,332 @@
+/* Reset Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mountains+of+Christmas&display=swap");
+
+body {
+  background-color: #fae8e0;
+
+  font: 16px;
+}
+
+/* Snowfall Animation */
+@keyframes snowfall {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(90vh);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  animation: snowfall linear infinite;
+}
+
+/* กระจายตำแหน่งหิมะ */
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-duration: 6s;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  animation-duration: 4s;
+}
+
+.snowflake:nth-child(5) {
+  left: 50%;
+  animation-duration: 5.5s;
+}
+
+.snowflake:nth-child(6) {
+  left: 60%;
+  animation-duration: 6.2s;
+}
+
+.snowflake:nth-child(7) {
+  left: 70%;
+  animation-duration: 5.8s;
+}
+
+.snowflake:nth-child(8) {
+  left: 80%;
+  animation-duration: 7.1s;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fae8e0;
+  padding: 20px 20px;
+  z-index: 9999;
+}
+
+/* NAV CONTAINER */
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ef7c8e;
+  text-transform: uppercase;
+}
+
+/* NAV MENU */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li a {
+  color: #ef7c8e;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+  background: #ef7c8e;
+  color: #b6e2d3;
+}
+
+/* HAMBURGER MENU (MOBILE) */
+
+.hamburger {
+  display: none;
+  /* แสดง hamburger ในขนาดหน้าจอเล็ก */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ef7c8e;
+}
+
+.nav-close {
+  display: none;
+  /* ซ่อนปุ่มปิด (กากบาท) ในตอนแรก */
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  color: #ef7c8e;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+    text-align: center;
+
+    background-color: #b6e2d3;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* optional: shadow effect */
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+    /* increased gap for better visibility */
+  }
+
+  .nav-links li a {
+    color: white;
+    display: block;
+    font-size: 20px;
+    padding: 12px;
+
+    width: 100%;
+    /* make the links take full width */
+  }
+
+  .nav-links a:hover {
+    color: #ef7c8e;
+  }
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LANDING PAGE */
+.landing-page {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  padding: 10px 80px;
+  color: #ef7c8e;
+  margin-top: 80px;
+  gap: 20px;
+}
+
+/* TEXT CONTAINER */
+.text-container {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
+
+.text-container h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Chewy", system-ui;
+}
+
+.text-container span {
+  font-size: 5.5rem;
+  font-family: "Chewy", system-ui;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+/* IMAGE CONTAINER */
+.pic-container {
+  width: 50%;
+  max-width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.pic-container img {
+  width: 100%;
+  max-width: 400px;
+  animation: fadeToWhite 5s infinite ease-in-out;
+}
+
+@keyframes fadeToWhite {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(2);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+
+  0% {
+    filter: brightness(1);
+  }
+}
+
+/* RESPONSIVE DESIGN (สำหรับจอเล็ก) */
+@media (max-width: 835px) {
+  .landing-page {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding: 0px 20px;
+  }
+
+  .text-container,
+  .pic-container {
+    width: 100%;
+  }
+
+  .text-container h1 {
+    font-size: 3rem;
+  }
+
+  .text-container span {
+    font-size: 3rem;
+  }
+}
+
+/* BUTTON */
+.button {
+  background-color: #b6e2d3;
+  padding: 16px 30px;
+  border-radius: 26px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  margin-top: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #6ae7bd;
+  transform: scale(1.05);
+}
