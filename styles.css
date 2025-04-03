@@ -10,8 +10,7 @@
 
 body {
   background-color: #fae8e0;
-
-  font: 16px;
+  font-size: 16px;
 }
 
 /* Snowfall Animation */
@@ -119,7 +118,7 @@ body {
 
 .nav-links li a {
   color: #ef7c8e;
-  font-size: 18px;
+  font-size: 1.125rem; /* Slightly larger font */
   text-decoration: none;
   padding: 12px 18px;
   border-radius: 24px;
@@ -136,8 +135,7 @@ body {
 
 .hamburger {
   display: none;
-  /* แสดง hamburger ในขนาดหน้าจอเล็ก */
-  font-size: 28px;
+  font-size: 1.75rem; /* Larger hamburger for mobile */
   background: none;
   border: none;
   cursor: pointer;
@@ -146,67 +144,14 @@ body {
 
 .nav-close {
   display: none;
-  /* ซ่อนปุ่มปิด (กากบาท) ในตอนแรก */
-  font-size: 28px;
+  font-size: 1.75rem;
   border: none;
   cursor: pointer;
   color: #ef7c8e;
 }
 
-/* RESPONSIVE MENU */
-@media (max-width: 768px) {
-  .nav-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
-  .hamburger {
-    cursor: pointer;
-    display: block;
-  }
 
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    border-radius: 0;
-    text-align: center;
-
-    background-color: #b6e2d3;
-    z-index: 2;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* optional: shadow effect */
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 20px;
-    /* increased gap for better visibility */
-  }
-
-  .nav-links li a {
-    color: white;
-    display: block;
-    font-size: 20px;
-    padding: 12px;
-
-    width: 100%;
-    /* make the links take full width */
-  }
-
-  .nav-links a:hover {
-    color: #ef7c8e;
-  }
-}
 
 /* FADE-IN ANIMATION */
 @keyframes fadeIn {
@@ -224,12 +169,16 @@ body {
 /* LANDING PAGE */
 .landing-page {
   display: flex;
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
   padding: 10px 80px;
   color: #ef7c8e;
-  margin-top: 80px;
+  margin-top: 70px;
   gap: 20px;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* TEXT CONTAINER */
@@ -279,36 +228,8 @@ body {
   100% {
     filter: brightness(1);
   }
-
-  0% {
-    filter: brightness(1);
-  }
 }
 
-/* RESPONSIVE DESIGN (สำหรับจอเล็ก) */
-@media (max-width: 835px) {
-  .landing-page {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    padding: 0px 20px;
-  }
-
-  .text-container,
-  .pic-container {
-    width: 100%;
-  }
-
-  .text-container h1 {
-    font-size: 3rem;
-  }
-
-  .text-container span {
-    font-size: 3rem;
-  }
-}
 
 /* BUTTON */
 .button {
@@ -329,4 +250,123 @@ body {
 .button:hover {
   background-color: #6ae7bd;
   transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    text-align: center;
+    background-color: #b6e2d3;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    color: white;
+    display: block;
+    font-size: 1.125rem;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #ef7c8e;
+  }
+  .landing-page {
+    display: flex;
+    min-height: 100vh; 
+    width: 100%;
+    padding: 0px 10px;
+    color: #ef7c8e;
+    margin-top: 30px;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .text-container,
+  .pic-container {
+    width: 80%;
+    
+  }
+
+  .pic-container img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    
+  }
+
+  .text-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: .8rem;
+  }
+
+  .text-container span {
+    font-size: 2rem;
+  }
+}
+
+.button{
+  
+  font-size: 1rem;
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .landing-page {
+    display: flex;
+    min-height: 90vh; 
+    width: 100%;
+    padding: 0px 20px;
+    color: #ef7c8e;
+    margin-top: 70px;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-container,
+  .pic-container {
+    width: 100%;
+  }
+
+  .text-container h1 {
+    font-size: 3rem;
+  }
+
+  .text-container span {
+    font-size: 3rem;
+  }
 }
